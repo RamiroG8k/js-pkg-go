@@ -1,11 +1,44 @@
 {
   "name": "js-lib-go",
+  "version": "0.0.2",
+  "description": "This is the entry point for the js-lib-go library.",
+  "author": "Ramiro M",
+  "keywords": [
+    "lib",
+    "js"
+  ],
+  "files": [
+    "dist/**/*"
+  ],
+  "license": "MIT",
   "module": "index.ts",
   "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "test:all": "bun test --coverage",
+    "test:file": "bun test --watch --verbose --coverage",
+    "build:types": "npx tsc -p tsconfig.build.json",
+    "build:bundle": "bun build --minify --splitting ./index.ts --outdir dist --format esm --footer=\"// built with love in GDL 🫀\"",
+    "build:all": "rm -rf dist && bun run build:bundle && bun run build:types",
+    "build:prepare": "bun run build:all && bun pm pack",
+    "publish:npm": "bun run build:all && bun publish",
+    "publish:patch": "npm version patch --no-git-tag-version && bun run publish:npm",
+    "publish:minor": "npm version minor --no-git-tag-version && bun run publish:npm",
+    "publish:major": "npm version major --no-git-tag-version && bun run publish:npm"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },
   "peerDependencies": {
     "typescript": "^5"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
