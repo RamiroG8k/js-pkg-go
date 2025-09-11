@@ -1,6 +1,6 @@
 {
   "name": "js-lib-go",
-  "version": "0.0.2",
+  "version": "0.2.0",
   "description": "This is the entry point for the js-lib-go library.",
   "author": "Ramiro M",
   "keywords": [
@@ -11,7 +11,8 @@
     "dist/**/*"
   ],
   "license": "MIT",
-  "module": "index.ts",
+  "module": "./dist/index.js",
+  "main": "./dist/index.js",
   "type": "module",
   "exports": {
     ".": {
@@ -21,16 +22,14 @@
     }
   },
   "scripts": {
-    "test:all": "bun test --coverage",
-    "test:file": "bun test --watch --verbose --coverage",
-    "build:types": "npx tsc -p tsconfig.build.json",
-    "build:bundle": "bun build --minify --splitting ./index.ts --outdir dist --format esm --footer=\"// built with love in GDL 🫀\"",
-    "build:all": "rm -rf dist && bun run build:bundle && bun run build:types",
-    "build:prepare": "bun run build:all && bun pm pack",
-    "publish:npm": "bun run build:all && bun publish",
-    "publish:patch": "npm version patch --no-git-tag-version && bun run publish:npm",
-    "publish:minor": "npm version minor --no-git-tag-version && bun run publish:npm",
-    "publish:major": "npm version major --no-git-tag-version && bun run publish:npm"
+    "test:coverage": "bun run test.ts coverage",
+    "test:file": "bun run test.ts file",
+    "build:dev": "bun run build.ts dev",
+    "build:prod": "bun run build.ts prod",
+    "publish:patch": "bun run publish.ts patch",
+    "publish:minor": "bun run publish.ts minor",
+    "publish:major": "bun run publish.ts major",
+    "publish:info": "bun run publish.ts info"
   },
   "devDependencies": {
     "@types/bun": "latest"

@@ -105,16 +105,70 @@ To install dependencies for development:
 bun install
 ```
 
-To run tests:
+### Testing
+
+The library uses a dedicated test script (`test.ts`) for all testing functionality:
 
 ```bash
-bun run test:all
+# Run all tests with coverage
+bun run test:coverage
+
+# Run specific test file in watch mode
+bun run test:file <filename>
 ```
 
-To build the library:
+### Building
+
+The library uses a focused build script (`build.ts`) with two main workflows:
 
 ```bash
-bun run build:all
+# Development build (unminified, with sourcemaps)
+bun run build:dev
+
+# Production build (minified, optimized)
+bun run build:prod
+```
+
+**Advanced build options:**
+```bash
+# Create package tarball after build
+bun run build.ts prod --pack
+
+# Development with watch mode (rebuilds on file changes)
+bun run build.ts dev --watch
+
+# Custom build configurations
+bun run build.ts prod --target=browser --format=esm
+```
+
+### Publishing
+
+The library uses a streamlined publish workflow that automatically builds, validates, and publishes:
+
+```bash
+# Show package information
+bun run publish:info
+
+# Full patch release (build → validate → bump → publish)
+bun run publish:patch
+
+# Full minor release (build → validate → bump → publish)
+bun run publish:minor
+
+# Full major release (build → validate → bump → publish)
+bun run publish:major
+```
+
+**Publishing workflow includes:**
+- ✅ Production build
+- ✅ Package validation
+- ✅ Version bump
+- ✅ NPM publishing
+
+**Test releases:**
+```bash
+# Test a release without actually publishing
+bun run publish:major --dry-run
 ```
 
 ## License
