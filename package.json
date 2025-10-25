@@ -24,6 +24,7 @@
   "scripts": {
     "test:coverage": "bun run test.ts coverage",
     "test:file": "bun run test.ts file",
+    "build:local": "bun run build.ts dev --pack",
     "build:dev": "bun run build.ts dev",
     "build:prod": "bun run build.ts prod",
     "publish:patch": "bun run publish.ts patch",
@@ -35,7 +36,7 @@
     "@types/bun": "latest"
   },
   "peerDependencies": {
-    "typescript": "^5"
+    "typescript": "^5.9.2"
   },
   "publishConfig": {
     "access": "public"
