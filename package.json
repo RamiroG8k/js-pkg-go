@@ -1,11 +1,12 @@
 {
-  "name": "js-lib-go",
-  "version": "0.2.0",
-  "description": "This is the entry point for the js-lib-go library.",
+  "name": "@g8k/js-pkg-go",
+  "version": "0.2.2",
+  "description": "This is the entry point for the js-pkg-go library.",
   "author": "Ramiro M",
   "keywords": [
     "lib",
-    "js"
+    "js",
+    "package"
   ],
   "files": [
     "dist/**/*"
@@ -29,8 +30,7 @@
     "build:prod": "bun run build.ts prod",
     "publish:patch": "bun run publish.ts patch",
     "publish:minor": "bun run publish.ts minor",
-    "publish:major": "bun run publish.ts major",
-    "publish:info": "bun run publish.ts info"
+    "publish:major": "bun run publish.ts major"
   },
   "devDependencies": {
     "@types/bun": "latest"
@@ -40,5 +40,14 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RamiroG8k/js-lib-go.git"
+  },
+  "types": "./dist/index.d.ts",
+  "bugs": {
+    "url": "https://github.com/RamiroG8k/js-lib-go/issues"
+  },
+  "homepage": "https://github.com/RamiroG8k/js-lib-go#readme"
 }

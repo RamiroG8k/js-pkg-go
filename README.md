@@ -1,4 +1,4 @@
-# js-lib-go
+# js-pkg-go
 
 A simple JavaScript/TypeScript utility library for mathematical operations.
 
@@ -7,19 +7,19 @@ A simple JavaScript/TypeScript utility library for mathematical operations.
 Install the library using npm:
 
 ```bash
-npm install js-lib-go
+npm install @g8k/js-pkg-go
 ```
 
 Or using yarn:
 
 ```bash
-yarn add js-lib-go
+yarn add @g8k/js-pkg-go
 ```
 
 Or using bun:
 
 ```bash
-bun add js-lib-go
+bun add @g8k/js-pkg-go
 ```
 
 ## Usage
@@ -29,19 +29,19 @@ bun add js-lib-go
 #### ES6 Modules (recommended)
 
 ```javascript
-import { sum } from 'js-lib-go';
+import { sum } from '@g8k/js-pkg-go';
 ```
 
 #### TypeScript
 
 ```typescript
-import { sum } from 'js-lib-go';
+import { sum } from '@g8k/js-pkg-go';
 ```
 
 #### CommonJS
 
 ```javascript
-const { sum } = require('js-lib-go');
+const { sum } = require('@g8k/js-pkg-go');
 ```
 
 ### Examples
@@ -49,7 +49,7 @@ const { sum } = require('js-lib-go');
 #### Basic Usage
 
 ```javascript
-import { sum } from 'js-lib-go';
+import { sum } from '@g8k/js-pkg-go';
 
 // Sum multiple numbers
 const result = sum(1, 2, 3, 4, 5);
@@ -68,7 +68,7 @@ console.log(empty); // Output: 0
 #### TypeScript Usage
 
 ```typescript
-import { sum } from 'js-lib-go';
+import { sum } from '@g8k/js-pkg-go';
 
 const calculate = (values: number[]): number => {
   return sum(...values);
