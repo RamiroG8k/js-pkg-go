@@ -82,7 +82,6 @@ async function buildBundle(options: BuildOptions = {}) {
         sourcemap: mergedOptions.sourcemap
             ? ("linked" as const)
             : ("none" as const),
-        external: [], // Bundle everything for the library
         footer: "// built with love in GDL 🫀",
         define: {
             "process.env.NODE_ENV": JSON.stringify("production"),
