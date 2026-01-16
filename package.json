@@ -23,8 +23,9 @@
     }
   },
   "scripts": {
-    "test:coverage": "bun run test.ts coverage",
-    "test:file": "bun run test.ts file",
+    "test:help": "bun run scripts/test/index.ts help",
+    "test:coverage": "bun run scripts/test/index.ts coverage",
+    "test:file": "bun run scripts/test/index.ts file",
     "build:local": "bun run build.ts dev",
     "build:prod": "bun run build.ts prod",
     "publish:patch": "bun run publish.ts patch",
