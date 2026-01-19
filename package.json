@@ -26,8 +26,10 @@
     "test:help": "bun run scripts/test/index.ts help",
     "test:coverage": "bun run scripts/test/index.ts coverage",
     "test:file": "bun run scripts/test/index.ts file",
-    "build:local": "bun run build.ts dev",
-    "build:prod": "bun run build.ts prod",
+    "build:help": "bun run scripts/build/index.ts help",
+    "build:local": "bun run scripts/build/index.ts local",
+    "build:dev": "bun run scripts/build/index.ts dev",
+    "build:prod": "bun run scripts/build/index.ts prod",
     "publish:patch": "bun run publish.ts patch",
     "publish:minor": "bun run publish.ts minor",
     "publish:major": "bun run publish.ts major"
@@ -43,11 +45,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RamiroG8k/js-lib-go.git"
+    "url": "git+https://github.com/RamiroG8k/js-pkg-go.git"
   },
   "types": "./dist/index.d.ts",
   "bugs": {
-    "url": "https://github.com/RamiroG8k/js-lib-go/issues"
+    "url": "https://github.com/RamiroG8k/js-pkg-go/issues"
   },
-  "homepage": "https://github.com/RamiroG8k/js-lib-go#readme"
+  "homepage": "https://github.com/RamiroG8k/js-pkg-go#readme"
 }

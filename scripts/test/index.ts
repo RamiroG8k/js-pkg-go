@@ -15,7 +15,6 @@
  *
  * Commands:
  *   coverage  - Run all tests with coverage (default)
- *   watch     - Run tests in watch mode
  *   file      - Run specific test file with watch
  *
  * @author Ramiro M
@@ -26,7 +25,7 @@ import { helpMessage } from "./help.ts";
 import { runAllTests, runSingleFileTests } from "./utils.ts";
 import type { ParsedArgs, TestCommand, TestOptions } from "./types.ts";
 
-export function parseCommandLineArgs(): ParsedArgs {
+function parseCommandLineArgs(): ParsedArgs {
     const [, , command, ...flags] = process.argv;
 
     // Parse file argument for file command
